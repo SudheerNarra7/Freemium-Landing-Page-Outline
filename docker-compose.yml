@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15
+    container_name: swipe-savvy-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: swipesavvy
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: swipesavvy_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d
+    networks:
+      - swipe-savvy-network
+
+  # Server (NestJS API)
+  server:
+    build:
+      context: ./apps/server
+      dockerfile: Dockerfile
+    container_name: swipe-savvy-server
+    restart: always
+    ports:
+      - "3001:3001"
+    environment:
+      DATABASE_URL: "postgresql://swipesavvy:password123@postgres:5432/swipesavvy_db"
+      NODE_ENV: development
+      PORT: 3001
+    depends_on:
+      - postgres
+    volumes:
+      - ./apps/server:/app
+      - /app/node_modules
+    networks:
+      - swipe-savvy-network
+    command: npm run start:dev
+
+volumes:
+  postgres_data:
+
+networks:
+  swipe-savvy-network:
+    driver: bridge 
