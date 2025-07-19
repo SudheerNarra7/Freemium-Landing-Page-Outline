@@ -16,6 +16,10 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
     "strictBindCallApply": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "lib": ["ES2023"],
+    "types": ["node"],
+    "esModuleInterop": true,
+    "resolveJsonModule": true
   }
 }
