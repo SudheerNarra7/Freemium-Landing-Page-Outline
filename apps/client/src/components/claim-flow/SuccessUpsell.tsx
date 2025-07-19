@@ -669,7 +669,7 @@ const SuccessUpsell = () => {
                     type="text"
                     value={paymentData.cardholderName}
                     onChange={(e) => handlePaymentInputChange('cardholderName', e.target.value)}
-                    placeholder="John Doe"
+                    placeholder="Sudheer Narra"
                     style={{
                       width: '100%',
                       padding: '12px 16px',
@@ -712,7 +712,7 @@ const SuccessUpsell = () => {
                     type="text"
                     value={paymentData.billingAddress.street}
                     onChange={(e) => handlePaymentInputChange('billingAddress.street', e.target.value)}
-                    placeholder="123 Main Street"
+                    placeholder="1234 Elm Street"
                     style={{
                       width: '100%',
                       padding: '12px 16px',
@@ -742,7 +742,7 @@ const SuccessUpsell = () => {
                       type="text"
                       value={paymentData.billingAddress.city}
                       onChange={(e) => handlePaymentInputChange('billingAddress.city', e.target.value)}
-                      placeholder="New York"
+                      placeholder="Dallas"
                       style={{
                         width: '100%',
                         padding: '12px 16px',
@@ -770,7 +770,7 @@ const SuccessUpsell = () => {
                       type="text"
                       value={paymentData.billingAddress.state}
                       onChange={(e) => handlePaymentInputChange('billingAddress.state', e.target.value)}
-                      placeholder="NY"
+                      placeholder="TX"
                       style={{
                         width: '100%',
                         padding: '12px 16px',
@@ -800,7 +800,7 @@ const SuccessUpsell = () => {
                     type="text"
                     value={paymentData.billingAddress.zipCode}
                     onChange={(e) => handlePaymentInputChange('billingAddress.zipCode', e.target.value)}
-                    placeholder="10001"
+                    placeholder="75201"
                     style={{
                       width: '100%',
                       padding: '12px 16px',
